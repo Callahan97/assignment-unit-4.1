@@ -36,7 +36,7 @@ function multiplyThree(num1, num2, num3) {
   return num1 * num2 * num3;
  
 }
-const resultMulti = multiplyThree(7, 3, 4);
+let resultMulti = multiplyThree(7, 3, 4);
 console.log(resultMulti);
 
 // 5. Function that will return true if a number is positive, 
@@ -47,6 +47,7 @@ function isPositive(number) {
   }else
   return false;
 }
+console.log(isPositive(10))
 console.log(isPositive(6))
 console.log(isPositive(-7))
 // Call the function to test each outcome (true & false) 
@@ -56,21 +57,32 @@ console.log(isPositive(-7))
 // 6. Function to return the _last_ item in an array. If the 
 //    array is empty, return `undefined`.
 let arry = [5, 7, 1, 56, 4];
-function getLast() {
-if (arry.length > 0) {
-  return arry[arry.length -1];
+function getLast(array) {
+if (array.length > 0) {
+  return array[array.length -1];
 } else{
   return 'undefined';
 }
 }
-console.log(getLast());
+console.log(getLast(arry));
 // 7. Function to find a value in an array. Return true if the 
 //    value is found and false otherwise. Use a loop;
 //    DO NOT use Array.includes, Array.indexOf, or Array.find 
-let numArray = [20, 83, 40, 58];
+
 function find(value, array) {
-for (let i = 0; i < array.length; i++)
+for (let i = 0; i < array.length; i++) {
+  if (array[i] === value) {
+    return true;}
+
+} return false;
 }
+
+let numArray = [20, 83, 40, 58];
+console.log(find(20, numArray));
+console.log(find(89, numArray));
+console.log(find(40, numArray));
+console.log(find(19, numArray));
+// Ask why switching array and value made the abswer check tweak.
 
 // ----------------------
 // Stretch Goals
